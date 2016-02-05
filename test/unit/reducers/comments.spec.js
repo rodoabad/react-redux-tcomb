@@ -4,14 +4,31 @@ import { comments } from '../../../src/reducers/comments';
 
 describe(`Given the comments reducer`, () => {
 
-  it(`should return the initial state`, () => {
+  context(`when passing invalid arguments`, () => {
 
-    expect(
-      comments(undefined, {})
-    )
-      .to
-      .deep
-      .equal([]);
+    it(`should return the initial state if you pass an undefined state`, () => {
+
+      expect(
+        comments(undefined, {})
+      )
+        .to
+        .deep
+        .equal([]);
+
+    });
+
+    it(`should return the initial state if you pass an invalid action type`, () => {
+
+      expect(
+        comments(undefined, {
+          type: 'RANDOM_ACTION_TYPE'
+        })
+      )
+        .to
+        .deep
+        .equal([]);
+
+    });
 
   });
 
