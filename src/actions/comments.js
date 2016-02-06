@@ -1,11 +1,10 @@
-let initialId = 0;
-
 export function addComment(comment) {
 
   return {
     type: 'ADD_COMMENT',
-    id: initialId++,
-    comment
+    author: comment.author,
+    id: comment.id,
+    text: comment.text
   };
 
 }

@@ -5,13 +5,20 @@ describe(`Given the comments actions`, () => {
 
   it(`should add a new comment`, () => {
 
-    const expectedNewComment = {
-      type: 'ADD_COMMENT',
-      id: 0,
-      comment: 'New comment'
+    const commentToAdd = {
+      author: 'Rodo Abad',
+      id: 1,
+      text: 'This is a comment'
     };
 
-    expect(comments.addComment(`New comment`))
+    const expectedNewComment = {
+      type: 'ADD_COMMENT',
+      author: 'Rodo Abad',
+      id: 1,
+      text: 'This is a comment'
+    };
+
+    expect(comments.addComment(commentToAdd))
       .to
       .deep
       .equal(expectedNewComment);
