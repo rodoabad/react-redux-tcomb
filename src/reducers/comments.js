@@ -13,6 +13,9 @@ export function comment(
       if (state.id !== action.id) {
         return state;
       }
+      break;
+    default:
+      return state;
   }
 }
 
