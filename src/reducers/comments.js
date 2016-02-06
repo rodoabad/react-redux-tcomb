@@ -9,8 +9,10 @@ export function comment(
         id: action.id,
         text: action.text
       };
-    default:
-      return state;
+    case 'DELETE_COMMENT':
+      if (state.id !== action.id) {
+        return state;
+      }
   }
 }
 
@@ -27,11 +29,7 @@ export function comments(
       ];
     case 'DELETE_COMMENT':
       return state.filter(
-        comment => {
-          if (comment.id !== action.id) {
-            return comment;
-          }
-        });
+        c => comment(c, action));
     default:
       return state;
   }
