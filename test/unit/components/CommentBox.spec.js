@@ -64,7 +64,7 @@ describe(`Given the CommentBox component`, () => {
 
   });
 
-  describe(`given the CommentList sub component`, () => {
+  describe(`Given the CommentList sub component`, () => {
 
     let commentListEl;
 
