@@ -9,3 +9,11 @@ export function addComment(comment) {
 
 }
 
+export function deleteComment(comment) {
+
+  return {
+    type: 'DELETE_COMMENT',
+    id: comment.id
+  };
+
+}

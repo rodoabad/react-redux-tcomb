@@ -25,4 +25,22 @@ describe(`Given the comments actions`, () => {
 
   });
 
+  it(`should require a comment id in order to delete a comment`, () => {
+
+    const commentToDelete = {
+      id: 1
+    };
+
+    const expectedDeleteCommentAction = {
+      type: 'DELETE_COMMENT',
+      id: 1
+    };
+
+    expect(comments.deleteComment(commentToDelete))
+      .to
+      .deep
+      .equal(expectedDeleteCommentAction);
+
+  });
+
 });
