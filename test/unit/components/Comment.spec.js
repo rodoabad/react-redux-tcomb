@@ -1,6 +1,6 @@
 import { expect } from 'code';
 import Chance from 'chance';
-import freeze from 'deep-freeze';
+import deepFreeze from 'deep-freeze';
 
 import * as TestUtils from '../../utils';
 import Comment from '../../../src/components/Comment';
@@ -14,7 +14,7 @@ describe(`Given the Comment component`, () => {
 
   function getPropTypes() {
 
-    return freeze({
+    return deepFreeze({
       author: expectedAuthor
     });
 
