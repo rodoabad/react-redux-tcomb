@@ -7,9 +7,9 @@ class CommentForm extends React.Component {
   render() {
 
     return (
-      <div className="comment-form">
-        {'Hello, world! I am a CommentForm.'}
-      </div>
+      <form className="comment-form">
+        <input type="text"/>
+      </form>
     );
 
   }
