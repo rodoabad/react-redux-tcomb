@@ -1,4 +1,4 @@
-export function comment(
+function comment(
   state,
   action
 ) {
