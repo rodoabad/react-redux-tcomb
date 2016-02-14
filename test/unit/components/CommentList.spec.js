@@ -17,7 +17,7 @@ describe(`Given the CommentList component`, () => {
   function getPropTypes() {
 
     return deepFreeze({
-      data: [
+      comments: [
         {
           author: expectedAuthor,
           id: expectedId,
