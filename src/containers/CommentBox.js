@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import CommentList from './../components/CommentList';
 
-let CommentBox = ({ comments }) => (
+const CommentBox = ({ comments }) => (
   <div className="comment-box">
     <h1>{'Comments'}</h1>
     <CommentList comments={comments}/>
