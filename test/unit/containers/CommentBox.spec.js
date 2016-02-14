@@ -3,7 +3,7 @@ import Chance from 'chance';
 import deepFreeze from 'deep-freeze';
 
 import * as TestUtils from '../../utils';
-import CommentBox from '../../../src/components/CommentBox';
+import CommentBox from '../../../src/containers/CommentBox';
 
 describe(`Given the CommentBox component`, () => {
 
@@ -17,7 +17,7 @@ describe(`Given the CommentBox component`, () => {
   function getPropTypes() {
 
     return deepFreeze({
-      data: [
+      comments: [
         {
           author: expectedAuthor,
           id: expectedId,
@@ -36,7 +36,7 @@ describe(`Given the CommentBox component`, () => {
 
     props = getPropTypes();
 
-    commentBoxEl = TestUtils.shallowRenderElement(CommentBox, props, 'random');
+    commentBoxEl = TestUtils.shallowRenderElement(CommentBox.WrappedComponent, props, 'random');
 
   });
 
