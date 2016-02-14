@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  devtool: 'sourcemap',
+  devtool: 'eval',
   entry: [
     './src/index.js'
   ],
