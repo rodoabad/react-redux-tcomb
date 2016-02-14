@@ -17,7 +17,7 @@ describe(`Given the comments actions`, () => {
       text: 'This is a comment'
     };
 
-    expect(comments.addComment(commentToAdd)).to.be.an.object().and.deep.equals(expectedNewComment);
+    expect(comments.addComment(commentToAdd)).to.be.an.object().and.deep.equal(expectedNewComment);
 
   });
 
@@ -35,7 +35,7 @@ describe(`Given the comments actions`, () => {
       text: 'This is another comment'
     };
 
-    expect(comments.addComment(commentToAdd)).to.be.an.object().and.deep.equals(expectedNewComment);
+    expect(comments.addComment(commentToAdd)).to.be.an.object().and.deep.equal(expectedNewComment);
 
   });
 
@@ -50,7 +50,7 @@ describe(`Given the comments actions`, () => {
       id: 1
     };
 
-    expect(comments.deleteComment(commentToDelete)).to.be.an.object().and.deep.equals(expectedDeleteCommentAction);
+    expect(comments.deleteComment(commentToDelete)).to.be.an.object().and.deep.equal(expectedDeleteCommentAction);
 
   });
 
