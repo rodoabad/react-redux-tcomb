@@ -6,10 +6,7 @@ function hasChildren(tree) {
 
 }
 
-export default function findAll(
-  tree,
-  test
-) {
+export default function findAll(tree, test) {
 
   let found = test(tree)
     ? [tree]
@@ -17,12 +14,11 @@ export default function findAll(
 
   if (hasChildren(tree)) {
 
-    React.Children.forEach(tree.props.children,
-      child => {
+    React.Children.forEach(tree.props.children, child => {
 
-        found = found.concat(findAll(child, test));
+      found = found.concat(findAll(child, test));
 
-      });
+    });
 
   }
 

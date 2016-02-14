@@ -1,11 +1,7 @@
 import React from 'react';
 import ReactTestUtils from 'react-addons-test-utils';
 
-export function shallowRenderElement(
-  component,
-  props,
-  children
-) {
+export function shallowRenderElement(component, props, children) {
 
   const renderer = ReactTestUtils.createRenderer();
 
