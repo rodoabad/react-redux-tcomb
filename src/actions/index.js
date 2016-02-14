@@ -1,9 +1,13 @@
+import * as types from '../constants/ActionTypes';
+
+let nextCommentId = 0;
+
 export function addComment(comment) {
 
   return {
-    type: 'ADD_COMMENT',
+    type: types.ADD_COMMENT,
     author: comment.author,
-    id: comment.id,
+    id: nextCommentId++,
     text: comment.text
   };
 
@@ -12,7 +16,7 @@ export function addComment(comment) {
 export function deleteComment(comment) {
 
   return {
-    type: 'DELETE_COMMENT',
+    type: types.DELETE_COMMENT,
     id: comment.id
   };
 
