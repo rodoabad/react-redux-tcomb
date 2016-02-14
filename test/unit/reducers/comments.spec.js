@@ -1,7 +1,7 @@
 import { expect } from 'code';
 import deepFreeze from 'deep-freeze';
 
-import { comments as commentsReducer } from '../../../src/reducers/comments';
+import comments from '../../../src/reducers/comments';
 
 describe(`Given the comments reducer`, () => {
 
@@ -19,25 +19,15 @@ describe(`Given the comments reducer`, () => {
 
     it(`should return the initial state if you pass an undefined state`, () => {
 
-      expect(
-        commentsReducer(undefined, {})
-      )
-        .to
-        .deep
-        .equal(initialState);
+      expect(comments(undefined, {})).to.be.an.array().and.deep.equal(initialState);
 
     });
 
     it(`should return the initial state if you pass an invalid action type`, () => {
 
-      expect(
-        commentsReducer(undefined, {
-          type: 'RANDOM_ACTION_TYPE'
-        })
-      )
-        .to
-        .deep
-        .equal(initialState);
+      expect(comments(undefined, {
+        type: 'RANDOM_ACTION_TYPE'
+      })).to.be.an.array().deep.equal(initialState);
 
     });
 
@@ -67,12 +57,7 @@ describe(`Given the comments reducer`, () => {
       deepFreeze(initialState);
       deepFreeze(addCommentAction);
 
-      expect(
-        commentsReducer(initialState, addCommentAction)
-      )
-        .to
-        .deep
-        .equal(expectedState);
+      expect(comments(initialState, addCommentAction)).to.be.an.array().deep.equal(expectedState);
 
     });
 
@@ -87,6 +72,11 @@ describe(`Given the comments reducer`, () => {
           author: 'Rodo Abad',
           id: 0,
           text: 'This is a comment'
+        },
+        {
+          author: 'Rodo Abad',
+          id: 1,
+          text: 'This is another comment'
         }
       ];
 
@@ -95,14 +85,15 @@ describe(`Given the comments reducer`, () => {
         id: 0
       };
 
-      const expectedState = [];
+      const expectedState = [
+        {
+          author: 'Rodo Abad',
+          id: 1,
+          text: 'This is another comment'
+        }
+      ];
 
-      expect(
-        commentsReducer(initialState, deleteCommentAction)
-      )
-        .to
-        .deep
-        .equal(expectedState);
+      expect(comments(initialState, deleteCommentAction)).to.be.an.array().deep.equal(expectedState);
 
     });
 

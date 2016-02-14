@@ -1,39 +1,23 @@
-function comment(
-  state,
-  action
-) {
-  switch (action.type) {
-    case 'ADD_COMMENT':
-      return {
-        author: action.author,
-        id: action.id,
-        text: action.text
-      };
-    case 'DELETE_COMMENT':
-      if (state.id !== action.id) {
-        return state;
-      }
-      break;
-    default:
-      return state;
-  }
-}
+import { ADD_COMMENT, DELETE_COMMENT } from '../constants/ActionTypes';
 
-export function comments(
-  state = [],
-  action
-) {
+const comments = (state = [], action) => {
 
   switch (action.type) {
-    case 'ADD_COMMENT':
+    case ADD_COMMENT:
       return [
         ...state,
-        comment(undefined, action)
+        {
+          author: action.author,
+          id: action.id,
+          text: action.text
+        }
+
       ];
-    case 'DELETE_COMMENT':
-      return state.filter(
-        c => comment(c, action));
+    case DELETE_COMMENT:
+      return state.filter(comment => comment.id !== action.id);
     default:
       return state;
   }
-}
+};
+
+export default comments;
