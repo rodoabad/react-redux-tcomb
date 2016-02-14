@@ -1,27 +1,16 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
 
-import CommentBox from './components/CommentBox';
+import App from './components/App';
+import commentApp from './reducers';
 
-const data = [
-  {
-    id: 1,
-    author: 'Pete Hunt',
-    text: 'This is one comment'
-  },
-  {
-    id: 2,
-    author: 'Jordan Walke',
-    text: 'This is *another* comment'
-  },
-  {
-    id: 3,
-    author: 'Rodo Abad',
-    text: 'Extra comment'
-  }
-];
+let store = createStore(commentApp);
 
-ReactDOM.render(
-  <CommentBox data={data}/>,
+render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
   document.getElementById('content')
 );
