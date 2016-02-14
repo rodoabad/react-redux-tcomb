@@ -1,30 +1,26 @@
 import React from 'react';
 
-class Comment extends React.Component {
+const Comment = ({
+  author,
+  children
+  }) => (
 
-  static displayName = 'Comment';
+  <div className="comment">
+    <h2
+      className="comment-author"
+      title={author}
+    >
+      {author}
+    </h2>
+    {children}
+  </div>
+);
 
-  static propTypes = {
-    author: React.PropTypes.string.isRequired,
-    children: React.PropTypes.string.isRequired
-  };
+Comment.displayName = 'Comment';
 
-  render() {
-
-    return (
-      <div className="comment">
-        <h2
-          className="comment-author"
-          title={this.props.author}
-        >
-          {this.props.author}
-        </h2>
-        {this.props.children}
-      </div>
-    );
-
-  }
-
-}
+Comment.propTypes = {
+  author: React.PropTypes.string.isRequired,
+  children: React.PropTypes.string.isRequired
+};
 
 export default Comment;
