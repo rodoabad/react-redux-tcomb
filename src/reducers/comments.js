@@ -1,23 +1,33 @@
 import { ADD_COMMENT, DELETE_COMMENT } from '../constants/ActionTypes';
 
-const comments = (state = [], action) => {
+function addComment(comments, action) {
+  return [
+    ...comments,
+    {
+      author: action.author,
+      id: action.id,
+      text: action.text
+    }
+  ];
+}
 
-  switch (action.type) {
-    case ADD_COMMENT:
-      return [
-        ...state,
-        {
-          author: action.author,
-          id: action.id,
-          text: action.text
-        }
+function deleteComment(comments, action) {
+  return comments.filter(comment => comment.id !== action.id);
+}
 
-      ];
-    case DELETE_COMMENT:
-      return state.filter(comment => comment.id !== action.id);
-    default:
-      return state;
-  }
-};
+function comments(comments = [], action) {
+
+  const actionTypes = {
+    [ ADD_COMMENT ]: addComment,
+    [ DELETE_COMMENT ]: deleteComment
+  };
+
+  const reducer = actionTypes[action.type];
+
+  return reducer
+    ? reducer(comments, action)
+    : comments;
+
+}
 
 export default comments;
