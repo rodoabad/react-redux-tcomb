@@ -3,7 +3,7 @@ import Chance from 'chance';
 import deepFreeze from 'deep-freeze';
 
 import * as TestUtils from '../../utils';
-import Comment from '../../../src/components/Comment';
+import Comment from '../../../src/views/components/Comment';
 
 describe(`Given the Comment component`, () => {
 

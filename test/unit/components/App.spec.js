@@ -3,7 +3,7 @@ import Chance from 'chance';
 import deepFreeze from 'deep-freeze';
 
 import * as TestUtils from '../../utils';
-import App from '../../../src/components/App';
+import App from '../../../src/views/components/App';
 
 describe(`Given the App component`, () => {
 
