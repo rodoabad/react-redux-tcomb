@@ -1,6 +1,7 @@
 import { ADD_COMMENT, DELETE_COMMENT } from '../constants/ActionTypes';
 
 function addComment(comments, action) {
+
   return [
     ...comments,
     {
@@ -9,10 +10,13 @@ function addComment(comments, action) {
       text: action.text
     }
   ];
+
 }
 
 function deleteComment(comments, action) {
+
   return comments.filter(comment => comment.id !== action.id);
+
 }
 
 function comments(comments = [], action) {
