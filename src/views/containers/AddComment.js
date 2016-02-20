@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addComment } from '../../actions';
+import { addComment } from '../../action-creators';
 
 const AddComment = ({ dispatch }) => {
 

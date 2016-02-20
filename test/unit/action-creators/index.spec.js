@@ -1,5 +1,5 @@
 import { expect } from 'code';
-import * as comments from '../../../src/actions';
+import * as comments from '../../../src/action-creators';
 
 describe('Given the comments actions', () => {
 
