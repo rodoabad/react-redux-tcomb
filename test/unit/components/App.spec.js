@@ -1,27 +1,25 @@
 import { expect } from 'code';
-import Chance from 'chance';
-import deepFreeze from 'deep-freeze';
 
 import * as TestUtils from '../../utils';
 import App from '../../../src/views/components/App';
 
-describe(`Given the App component`, () => {
+describe('Given the App component', () => {
 
   let appEl;
 
-  beforeEach(`Setup`, () => {
+  beforeEach('Setup', () => {
 
     appEl = TestUtils.shallowRenderElement(App);
 
   });
 
-  it(`should have a div`, () => {
+  it('should have a div', () => {
 
     expect(appEl.type).equal('div');
 
   });
 
-  describe(`Given the AddComment container`, () => {
+  describe('Given the AddComment container', () => {
 
     let addCommentEl;
 
@@ -31,7 +29,7 @@ describe(`Given the App component`, () => {
 
     });
 
-    it(`should have a wrapped component AddComment`, () => {
+    it('should have a wrapped component AddComment', () => {
 
       const expectedComponent = 'AddComment';
 
@@ -41,7 +39,7 @@ describe(`Given the App component`, () => {
 
   });
 
-  describe(`Given the CommentBox container`, () => {
+  describe('Given the CommentBox container', () => {
 
     let commentBoxEl;
 
@@ -51,7 +49,7 @@ describe(`Given the App component`, () => {
 
     });
 
-    it(`should have a wrapped component CommentBox`, () => {
+    it('should have a wrapped component CommentBox', () => {
 
       const expectedComponent = 'CommentBox';
 

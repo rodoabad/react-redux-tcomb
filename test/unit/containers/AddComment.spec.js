@@ -1,6 +1,4 @@
 import { expect } from 'code';
-import Chance from 'chance';
-import deepFreeze from 'deep-freeze';
 
 import * as TestUtils from '../../utils';
 import AddComment from '../../../src/views/containers/AddComment';

@@ -5,7 +5,7 @@ import deepFreeze from 'deep-freeze';
 import * as TestUtils from '../../utils';
 import Comment from '../../../src/views/components/Comment';
 
-describe(`Given the Comment component`, () => {
+describe('Given the Comment component', () => {
 
   let chance = new Chance(),
     commentEl,
@@ -20,7 +20,7 @@ describe(`Given the Comment component`, () => {
 
   }
 
-  beforeEach(`Setup`, () => {
+  beforeEach('Setup', () => {
 
     expectedAuthor = chance.string();
 
@@ -30,7 +30,7 @@ describe(`Given the Comment component`, () => {
 
   });
 
-  it(`should have a div with a className of 'comment'`, () => {
+  it('should have a div with a className of "comment"', () => {
 
     expect(commentEl.type)
       .to
@@ -42,7 +42,7 @@ describe(`Given the Comment component`, () => {
 
   });
 
-  it(`should contain an author`, () => {
+  it('should contain an author', () => {
 
     const authorEl = TestUtils.findByClassName(commentEl, 'comment-author');
 

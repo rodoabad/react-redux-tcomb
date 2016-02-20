@@ -3,9 +3,9 @@ import deepFreeze from 'deep-freeze';
 
 import comments from '../../../src/reducers/comments';
 
-describe(`Given the comments reducer`, () => {
+describe('Given the comments reducer', () => {
 
-  context(`when passing invalid arguments`, () => {
+  context('when passing invalid arguments', () => {
 
     let initialState;
 
@@ -17,13 +17,13 @@ describe(`Given the comments reducer`, () => {
 
     });
 
-    it(`should return the initial state if you pass an undefined state`, () => {
+    it('should return the initial state if you pass an undefined state', () => {
 
       expect(comments(undefined, {})).to.be.an.array().and.deep.equal(initialState);
 
     });
 
-    it(`should return the initial state if you pass an invalid action type`, () => {
+    it('should return the initial state if you pass an invalid action type', () => {
 
       expect(comments(undefined, {
         type: 'RANDOM_ACTION_TYPE'
@@ -33,9 +33,9 @@ describe(`Given the comments reducer`, () => {
 
   });
 
-  context(`when adding a comment`, () => {
+  context('when adding a comment', () => {
 
-    it(`should add the comment if the right action type is passed`, () => {
+    it('should add the comment if the right action type is passed', () => {
 
       const initialState = [];
 
@@ -63,9 +63,9 @@ describe(`Given the comments reducer`, () => {
 
   });
 
-  context(`when deleting a comment`, () => {
+  context('when deleting a comment', () => {
 
-    it(`should delete the comment if the right action is passed`, () => {
+    it('should delete the comment if the right action is passed', () => {
 
       const initialState = [
         {

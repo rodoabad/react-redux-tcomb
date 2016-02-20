@@ -5,7 +5,7 @@ import deepFreeze from 'deep-freeze';
 import * as TestUtils from '../../utils';
 import CommentBox from '../../../src/views/containers/CommentBox';
 
-describe(`Given the CommentBox component`, () => {
+describe('Given the CommentBox component', () => {
 
   let chance = new Chance(),
     commentBoxEl,
@@ -28,7 +28,7 @@ describe(`Given the CommentBox component`, () => {
 
   }
 
-  beforeEach(`Setup`, () => {
+  beforeEach('Setup', () => {
 
     expectedAuthor = chance.string();
     expectedId = chance.string();
@@ -40,7 +40,7 @@ describe(`Given the CommentBox component`, () => {
 
   });
 
-  it(`should have a div with a className of 'comment-box'`, () => {
+  it('should have a div with a className of "comment-box"', () => {
 
     expect(commentBoxEl.type)
       .to
@@ -51,7 +51,7 @@ describe(`Given the CommentBox component`, () => {
 
   });
 
-  it(`should have a header`, () => {
+  it('should have a header', () => {
 
     const headerEl = TestUtils.findByType(commentBoxEl, 'h1');
 
@@ -64,7 +64,7 @@ describe(`Given the CommentBox component`, () => {
 
   });
 
-  describe(`Given the CommentList sub component`, () => {
+  describe('Given the CommentList sub component', () => {
 
     let commentListEl;
 
@@ -74,7 +74,7 @@ describe(`Given the CommentBox component`, () => {
 
     });
 
-    it(`should have a data prop that accepts a list of comments`, () => {
+    it('should have a data prop that accepts a list of comments', () => {
 
       expect(commentListEl.props.data)
         .to

@@ -5,7 +5,7 @@ import deepFreeze from 'deep-freeze';
 import * as TestUtils from '../../utils';
 import CommentList from '../../../src/views/components/CommentList';
 
-describe(`Given the CommentList component`, () => {
+describe('Given the CommentList component', () => {
 
   let chance = new Chance(),
     commentListEl,
@@ -28,7 +28,7 @@ describe(`Given the CommentList component`, () => {
 
   }
 
-  beforeEach(`Setup`, () => {
+  beforeEach('Setup', () => {
 
     expectedAuthor = chance.string();
     expectedId = chance.hash();
@@ -40,7 +40,7 @@ describe(`Given the CommentList component`, () => {
 
   });
 
-  it(`should have a div with a className of 'comment-list'`, () => {
+  it('should have a div with a className of "comment-list"', () => {
 
     expect(commentListEl.type)
       .to
@@ -52,7 +52,7 @@ describe(`Given the CommentList component`, () => {
 
   });
 
-  describe(`Given the Comment sub component`, () => {
+  describe('Given the Comment sub component', () => {
 
     let commentEl;
 
@@ -62,7 +62,7 @@ describe(`Given the CommentList component`, () => {
 
     });
 
-    it(`should contain an ID`, () => {
+    it('should contain an ID', () => {
 
       expect(commentEl.key)
         .to
@@ -70,7 +70,7 @@ describe(`Given the CommentList component`, () => {
 
     });
 
-    it(`should contain an author`, () => {
+    it('should contain an author', () => {
 
       expect(commentEl.props.author)
         .to
@@ -78,7 +78,7 @@ describe(`Given the CommentList component`, () => {
 
     });
 
-    it(`should contain the comment`, () => {
+    it('should contain the comment', () => {
 
       expect(commentEl.props.children)
         .to

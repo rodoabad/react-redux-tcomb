@@ -1,9 +1,9 @@
 import { expect } from 'code';
 import * as comments from '../../../src/actions';
 
-describe(`Given the comments actions`, () => {
+describe('Given the comments actions', () => {
 
-  it(`should add a new comment`, () => {
+  it('should add a new comment', () => {
 
     const commentToAdd = {
       author: 'Rodo Abad',
@@ -21,7 +21,7 @@ describe(`Given the comments actions`, () => {
 
   });
 
-  it(`should add another comment`, () => {
+  it('should add another comment', () => {
 
     const commentToAdd = {
       author: 'Rodo Abad',
@@ -39,7 +39,7 @@ describe(`Given the comments actions`, () => {
 
   });
 
-  it(`should require a comment id in order to delete a comment`, () => {
+  it('should require a comment id in order to delete a comment', () => {
 
     const commentToDelete = {
       id: 1
