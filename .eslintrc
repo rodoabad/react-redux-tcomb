@@ -89,13 +89,14 @@
         "beforeColon": false
       }
     ],
+    "keyword-spacing": 2,
     "no-alert": 2,
-    "no-arrow-condition": 2,
     "no-class-assign": 2,
     "no-cond-assign": [
       2,
       "always"
     ],
+    "no-confusing-arrow": 2,
     "no-console": 1,
     "no-constant-condition": 2,
     "no-control-regex": 2,
@@ -168,8 +169,6 @@
     "react/jsx-no-literals": 1,
     "react/jsx-no-undef": 1,
     "react/jsx-pascal-case": 1,
-    "react/jsx-quotes": 1,
-    "react/jsx-sort-prop-types": 1,
     "react/jsx-sort-props": 1,
     "react/jsx-uses-react": 1,
     "react/jsx-uses-vars": 1,
@@ -192,12 +191,9 @@
     "react/require-extension": 1,
     "react/self-closing-comp": 1,
     "react/sort-comp": 1,
+    "react/sort-prop-types": 2,
     "react/wrap-multilines": 1,
     "semi": [
-      2,
-      "always"
-    ],
-    "space-after-keywords": [
       2,
       "always"
     ],
