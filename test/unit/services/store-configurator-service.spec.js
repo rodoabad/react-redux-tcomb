@@ -8,7 +8,7 @@ import * as storeConfiguratorService from '../../../src/services/store-configura
 
 describe('Given the store configurator service', () => {
 
-  let expectedReducers,
+  let expectedReducer,
     expectedInitialState,
     middlewareStoreCreator,
     sandbox,
@@ -35,7 +35,7 @@ describe('Given the store configurator service', () => {
 
   it('should use the thunk middleware to support async actions', () => {
 
-    storeConfiguratorService.create(expectedReducers);
+    storeConfiguratorService.create(expectedReducer);
 
     sinon.assert.calledOnce(redux.applyMiddleware);
     sinon.assert.calledWith(redux.applyMiddleware, thunk);
@@ -44,7 +44,7 @@ describe('Given the store configurator service', () => {
 
   it('should use the store with the thunk middleware', () => {
 
-    storeConfiguratorService.create(expectedReducers);
+    storeConfiguratorService.create(expectedReducer);
 
     sinon.assert.calledOnce(storeConstructor);
     sinon.assert.calledWith(storeConstructor, redux.createStore);
@@ -53,9 +53,9 @@ describe('Given the store configurator service', () => {
 
   it('should pass the reducers to the middleware store creator', () => {
 
-    middlewareStoreCreator.once().withExactArgs(expectedReducers);
+    middlewareStoreCreator.once().withExactArgs(expectedReducer);
 
-    storeConfiguratorService.create(expectedReducers, expectedInitialState);
+    storeConfiguratorService.create(expectedReducer, expectedInitialState);
 
     middlewareStoreCreator.verify();
 
@@ -63,7 +63,7 @@ describe('Given the store configurator service', () => {
 
   it('should return the store instance', () => {
 
-    expect(storeConfiguratorService.create(expectedReducers)).equals(stubStoreInstance);
+    expect(storeConfiguratorService.create(expectedReducer)).equals(stubStoreInstance);
 
   });
 
