@@ -3,7 +3,7 @@ import { expect } from 'code';
 import * as TestUtils from '../../utils';
 import AddComment from '../../../src/views/containers/AddComment';
 
-describe('Given the App component', () => {
+describe('Given the AddComment component', () => {
 
   let addCommentEl;
 
