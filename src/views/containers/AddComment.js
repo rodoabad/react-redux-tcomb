@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { addComment } from '../../action-creators';
+import * as actionCreators from '../../action-creators';
 
-const AddComment = ({ dispatch }) => {
+const AddComment = ({ actions }) => {
 
   let author,
     text;
@@ -25,10 +25,10 @@ const AddComment = ({ dispatch }) => {
       <br/>
       <button
         onClick={() => {
-          dispatch(addComment({
+          actions.addComment({
             author: author.value,
             text: text.value
-          }));
+          });
         }}
       >
         {'Add Comment'}
@@ -38,5 +38,23 @@ const AddComment = ({ dispatch }) => {
 };
 
 AddComment.displayName = 'AddComment';
+AddComment.propTypes = {
+  actions: PropTypes.object.isRequired
+};
 
-export default connect()(AddComment);
+function mapStateToProps() {
+  return {};
+}
+
+function mergeProps(state, actions) {
+
+  return {
+    ...state,
+    actions: {
+      ...actions
+    }
+  };
+
+}
+
+export default connect(mapStateToProps, actionCreators, mergeProps)(AddComment);
