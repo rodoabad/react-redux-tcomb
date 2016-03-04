@@ -1,12 +1,11 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
 
 import App from './views/components/App';
-import commentApp from './reducers';
+import * as storeFactory from './store-factory';
 
-let store = createStore(commentApp);
+let store = storeFactory.getStore();
 
 render(
   <Provider store={store}>
