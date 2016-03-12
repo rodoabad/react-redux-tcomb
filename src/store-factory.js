@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
+import { routerReducer } from 'react-router-redux';
 
 import * as storeConfigurator from './services/store-configurator-service';
 import reducers from './reducers';
@@ -8,7 +9,8 @@ let store;
 function createStore() {
 
   const reducer = combineReducers({
-    ...reducers
+    ...reducers,
+    routing: routerReducer
   });
 
   return storeConfigurator.create(reducer);

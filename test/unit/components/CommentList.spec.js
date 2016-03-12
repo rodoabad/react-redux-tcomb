@@ -42,13 +42,9 @@ describe('Given the CommentList component', () => {
 
   it('should have a div with a className of "comment-list"', () => {
 
-    expect(commentListEl.type)
-      .to
-      .equal('div');
+    expect(commentListEl.type).equal('div');
 
-    expect(commentListEl.props.className)
-      .to
-      .equal('comment-list');
+    expect(commentListEl.props.className).equal('comment-list');
 
   });
 
@@ -64,25 +60,19 @@ describe('Given the CommentList component', () => {
 
     it('should contain an ID', () => {
 
-      expect(commentEl.key)
-        .to
-        .equal(expectedId);
+      expect(commentEl.key).equal(expectedId);
 
     });
 
     it('should contain an author', () => {
 
-      expect(commentEl.props.author)
-        .to
-        .equal(expectedAuthor);
+      expect(commentEl.props.author).equal(expectedAuthor);
 
     });
 
     it('should contain the comment', () => {
 
-      expect(commentEl.props.children)
-        .to
-        .equal(expectedText);
+      expect(commentEl.props.children).equal(expectedText);
 
     });
 

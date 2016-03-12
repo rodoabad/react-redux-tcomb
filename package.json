@@ -4,7 +4,7 @@
   "description": "React, Redux and tcomb setup",
   "main": "index.js",
   "scripts": {
-    "dev-server": "webpack-dev-server --port 8000 --content-base ./demo --hot --inline --colors",
+    "dev-server": "webpack-dev-server --port 8000 --content-base ./demo --hot --inline --colors --history-api-fallback",
     "test": "mocha ./test/unit"
   },
   "repository": {

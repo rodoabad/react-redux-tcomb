@@ -32,13 +32,9 @@ describe('Given the Comment component', () => {
 
   it('should have a div with a className of "comment"', () => {
 
-    expect(commentEl.type)
-      .to
-      .equal('div');
+    expect(commentEl.type).equal('div');
 
-    expect(commentEl.props.className)
-      .to
-      .equal('comment');
+    expect(commentEl.props.className).equal('comment');
 
   });
 
@@ -46,17 +42,11 @@ describe('Given the Comment component', () => {
 
     const authorEl = TestUtils.findByClassName(commentEl, 'comment-author');
 
-    expect(authorEl.type)
-      .to
-      .equal('h2');
+    expect(authorEl.type).equal('h2');
 
-    expect(authorEl.props.title)
-      .to
-      .equal(expectedAuthor);
+    expect(authorEl.props.title).equal(expectedAuthor);
 
-    expect(authorEl.props.children)
-      .to
-      .equal(expectedAuthor);
+    expect(authorEl.props.children).equal(expectedAuthor);
 
   });
 
